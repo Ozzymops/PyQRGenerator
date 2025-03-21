@@ -1,15 +1,23 @@
-:: Start
-@ECHO OFF
-CD .venv/Scripts
-CALL activate
-CD ../..
+@ECHO off
 
-:: Input
-SET /p NAME=Naam: 
-SET /p BDAY=Geboortedatum [dd-mm-yyyy]: 
-SET /p EMAIL=Emailadres: 
-SET /p TELN=Telefoonnummer: 
+SET VENV=".venv"
 
-:: End
-py pyqr.py "%NAME%" "%BDAY%" "%TELN%"
-SET /p WAIT=Finished. Press ENTER to exit.
+IF NOT EXIST "%VENV%\scripts\activate.bat" (
+	pip.exe install virtualenv
+	ECHO Creating virtual environment...
+	python.exe -m venv %VENV%
+)
+
+IF NOT EXIST "%VENV%\scripts\activate.bat" (
+	EXIT /B 1
+)
+
+CALL "%VENV%\scripts\activate.bat"
+
+ECHO Updating requirements...
+pip.exe install -r requirements.txt
+
+cls
+
+ECHO Starting...
+flet run
