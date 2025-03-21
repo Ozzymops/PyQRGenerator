@@ -1,0 +1,2 @@
+https://flet.dev/docs/controls/stack
+https://pypi.org/project/qrcode/
