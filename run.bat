@@ -7,6 +7,7 @@ CD ../..
 :: Input
 SET /p NAME=Naam: 
 SET /p BDAY=Geboortedatum [dd-mm-yyyy]: 
+SET /p EMAIL=Emailadres: 
 SET /p TELN=Telefoonnummer: 
 
 :: End
