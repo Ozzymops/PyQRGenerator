@@ -1,2 +1,6 @@
-https://flet.dev/docs/controls/stack
+Sources:
+https://flet.dev/docs
 https://pypi.org/project/qrcode/
+
+Progress ring on generate:
+https://flet.dev/docs/controls/progressring
