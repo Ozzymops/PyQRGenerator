@@ -25,7 +25,8 @@ def main(page: ft.Page):
 
         # Generate QR code
         qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
-        qr.add_data(f"{textfield_name.value}|{textfield_birthday.value}")
+        # qr.add_data(f"{textfield_name.value}|{textfield_birthday.value}")
+        qr.add_data(f"Naam: {textfield_name.value}, Geboortedatum: {textfield_birthday.value}")
         image = qr.make_image()
         
         # Convert to base64 string
@@ -42,7 +43,7 @@ def main(page: ft.Page):
         button_save.disabled = False
 
         # Update status text
-        text_status.value = f"Code met waarde {textfield_name.value}|{textfield_birthday.value} gegenereerd!"
+        text_status.value = f"Code met waarde {textfield_name.value} | {textfield_birthday.value} gegenereerd!"
 
         # Update page
         create_col.update()
